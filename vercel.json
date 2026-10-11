@@ -1,12 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "outputDirectory": ".",
   "redirects": [
-    { "source": "/index", "destination": "/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/detail", "destination": "/direktori", "permanent": true },
     { "source": "/detail.html", "destination": "/direktori", "permanent": true },
-    { "source": "/direktori/:slug", "destination": "/Direktori/:slug", "permanent": true },
     { "source": "/jaya-roda", "destination": "/Direktori/jaya-roda", "permanent": true },
     { "source": "/jaya-roda.html", "destination": "/Direktori/jaya-roda", "permanent": true },
     { "source": "/kopi-janari", "destination": "/Direktori/kopi-janari", "permanent": true },
