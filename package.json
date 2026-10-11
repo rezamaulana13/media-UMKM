@@ -1,0 +1,17 @@
+{
+  "name": "media-umkm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website statis Media UMKM. Jalankan `npm run build` setiap kali mengubah style.css, data.js atau menambah halaman/ikon baru.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "bootstrap": "5.3.3",
+    "bootstrap-icons": "1.11.3",
+    "csso": "^5.0.5",
+    "purgecss": "^7.0.2",
+    "subset-font": "^2.4.0"
+  }
+}

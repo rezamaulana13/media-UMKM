@@ -51,7 +51,7 @@
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
   --shadow-glow: 0 0 24px var(--primary-glow);
 
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', system-ui, -apple-system, sans-serif;
 }
 
 /* Reset & Base */

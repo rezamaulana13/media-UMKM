@@ -243,14 +243,21 @@ function pasangLayout() {
   if (btnTop && progressCircle && !btnTop._bound) {
     btnTop._bound = true;
     const circumference = 2 * Math.PI * 20;
-    window.addEventListener('scroll', () => {
+    let docHeight = 1, ticking = false, shown = false;
+    const measure = () => { docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight); };
+    const update = () => {
+      ticking = false;
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(1, Math.max(0, scrollTop / (docHeight || 1)));
+      const progress = Math.min(1, Math.max(0, scrollTop / docHeight));
       progressCircle.style.strokeDashoffset = circumference - (progress * circumference);
-      if (scrollTop > 250) btnTop.classList.add('active');
-      else btnTop.classList.remove('active');
-    });
+      const show = scrollTop > 250;
+      if (show !== shown) { shown = show; btnTop.classList.toggle('active', show); }
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', () => { measure(); update(); }, { passive: true });
+    window.addEventListener('load', measure);
+    if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
+    measure();
     btnTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 

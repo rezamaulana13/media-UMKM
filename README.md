@@ -3,7 +3,7 @@
 Website statis (HTML + Bootstrap 5 + JavaScript biasa). Tanpa database, tanpa server.
 
 ## Cara membuka
-Klik dua kali `index.html`. Perlu internet karena Bootstrap, ikon, dan font dimuat lewat CDN.
+Klik dua kali `index.html`. Bootstrap, ikon, dan font sudah ada di folder `assets/` (tidak lagi lewat CDN/Google Fonts), jadi cepat dan tetap tampil tanpa internet (kecuali foto dari Unsplash).
 
 ## Yang perlu kamu edit (hanya satu file)
 Buka `assets/js/data.js`:
@@ -45,7 +45,27 @@ jaya-roda.html          Halaman UMKM: Bengkel Sepeda Jaya Roda
 daftar.html             Formulir daftar -> kirim ke WhatsApp
 tentang.html            Tentang
 kontak.html             Kontak
-assets/css/style.css
+assets/css/style.css    <- sumber CSS kamu (edit di sini)
+assets/css/site.min.css <- HASIL BUILD, inilah yang dimuat semua halaman (jangan diedit)
+assets/fonts/           <- font Plus Jakarta Sans (hasil build)
 assets/js/data.js       <- data kamu
 assets/js/app.js        <- logika halaman
+build.mjs               <- skrip build (lihat bagian di bawah)
+vercel.json             <- pengaturan cache di Vercel
 ```
+
+## Build (WAJIB setelah mengubah style.css / data.js / ikon)
+Semua halaman memuat **satu** file CSS hasil build: `assets/css/site.min.css`
+(Bootstrap yang sudah dipangkas + ikon yang dipakai saja + `style.css`, sudah diperkecil).
+Karena itu, perubahan di `style.css` baru terlihat setelah build ulang:
+
+```
+npm install      # cukup sekali
+npm run build
+```
+Jalankan `npm run build` lagi setiap kali kamu:
+- mengubah `assets/css/style.css`,
+- menambah ikon baru (`bi-xxx`) di HTML atau `data.js` (mis. ikon kategori baru),
+- menambah halaman/komponen Bootstrap baru,
+
+lalu commit file `assets/css/site.min.css` dan `assets/fonts/` ikut di-push. File `style.css` dan folder `assets/vendor/` tidak diubah build.

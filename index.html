@@ -34,17 +34,10 @@
 <meta name="twitter:description" content="Portal direktori dan etalase digital UMKM seluruh Indonesia. Bagikan dan temukan aneka produk lokal, warung, dan jasa via WhatsApp.">
 <meta name="twitter:image" content="https://mediaumkm.web.id/assets/img/background-hero.webp">
 
-<!-- Google Fonts Plus Jakarta Sans -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- Bootstrap 5 CSS & Icons (Local & CDN Fallback) -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <!-- Custom CSS -->
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/background-hero.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/site.min.css">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
 <!-- JSON-LD Structured Data (AEO & LocalBusiness Graph) -->
@@ -135,7 +128,7 @@
 <div class="container">
 <a class="navbar-brand" href="index.html">
 <span class="brand-logo-mark" aria-hidden="true">
-<img src="assets/img/logo.webp" alt="Logo Media UMKM" width="40" height="40" decoding="async" onerror="this.src='assets/img/favicon.png'">
+<img src="assets/img/logo-120.webp" alt="Logo Media UMKM" width="40" height="40" decoding="async" onerror="this.src='assets/img/favicon.png'">
 </span>
 <span class="brand-logo-text">
 <span class="brand-name">Media <span class="brand-highlight">UMKM</span></span>
@@ -217,7 +210,7 @@ Direktori UMKM
 <div class="row align-items-center g-5">
 <div class="col-lg-5 reveal">
 <div class="about-image-wrapper">
-<img src="assets/img/tentang-umkm.webp" alt="Tentang Media UMKM" class="img-fluid about-img" loading="lazy">
+<img src="assets/img/tentang-umkm.webp" srcset="assets/img/tentang-umkm-640.webp 640w, assets/img/tentang-umkm.webp 800w" sizes="(min-width: 992px) 480px, (min-width: 576px) 540px, 92vw" width="800" height="597" alt="Tentang Media UMKM" class="img-fluid about-img" loading="lazy" decoding="async">
 </div>
 </div>
 <div class="col-lg-7 reveal">
@@ -292,7 +285,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <!-- Card 1 -->
 <div class="gallery-fan-card" data-index="0" data-pos="-2">
 <div class="gallery-fan-card-inner">
-<img src="assets/img/logo.webp" alt="Kopi Janari" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/logo.webp" alt="Kopi Janari" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 <div class="gallery-fan-overlay"></div>
 <div class="gallery-fan-top"><span class="gallery-fan-logo">☕ Kopi Lokal</span></div>
 <div class="gallery-fan-content">
@@ -304,7 +297,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <!-- Card 2 -->
 <div class="gallery-fan-card" data-index="1" data-pos="-1">
 <div class="gallery-fan-card-inner">
-<img src="assets/img/background-hero.webp" alt="Seblak Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/background-hero.webp" alt="Seblak Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 <div class="gallery-fan-overlay"></div>
 <div class="gallery-fan-top"><span class="gallery-fan-logo">🍜 Kuliner Pedas</span></div>
 <div class="gallery-fan-content">
@@ -316,7 +309,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <!-- Card 3 (Active Center) -->
 <div class="gallery-fan-card" data-index="2" data-pos="0">
 <div class="gallery-fan-card-inner">
-<img src="assets/img/pengelola.svg" alt="Mekar Batik" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd858d97240?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/pengelola.svg" alt="Mekar Batik" onerror="this.src='https://images.unsplash.com/photo-1606760227091-3dd858d97240?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 <div class="gallery-fan-overlay"></div>
 <div class="gallery-fan-top"><span class="gallery-fan-logo">🎨 Batik Tulis</span></div>
 <div class="gallery-fan-content">
@@ -328,7 +321,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <!-- Card 4 -->
 <div class="gallery-fan-card" data-index="3" data-pos="1">
 <div class="gallery-fan-card-inner">
-<img src="assets/img/logo.webp" alt="Rajut Neng Ayu" onerror="this.src='https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/logo.webp" alt="Rajut Neng Ayu" onerror="this.src='https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 <div class="gallery-fan-overlay"></div>
 <div class="gallery-fan-top"><span class="gallery-fan-logo">🧶 Kerajinan Rajut</span></div>
 <div class="gallery-fan-content">
@@ -340,7 +333,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <!-- Card 5 -->
 <div class="gallery-fan-card" data-index="4" data-pos="2">
 <div class="gallery-fan-card-inner">
-<img src="assets/img/background-hero.webp" alt="Laundry Kilat" onerror="this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/background-hero.webp" alt="Laundry Kilat" onerror="this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 <div class="gallery-fan-overlay"></div>
 <div class="gallery-fan-top"><span class="gallery-fan-logo">🧺 Jasa Laundry</span></div>
 <div class="gallery-fan-content">
@@ -377,7 +370,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <div class="umkm-card reveal">
 <div class="umkm-card-photo">
 <span class="badge-tag badge-emerald">Buka • Kuliner</span>
-<img src="assets/img/logo.webp" alt="Kopi Janari" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/logo.webp" alt="Kopi Janari" onerror="this.src='https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 </div>
 <div class="umkm-card-body">
 <span class="umkm-category">Kedai Kopi &amp; Camilan</span>
@@ -388,8 +381,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 08.00 – 22.00 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/kopi-janari.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6281234567890?text=Halo%20Kedai%20Kopi%20Janari%2C%20saya%20ingin%20pesan" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/kopi-janari.html" class="btn-detail" aria-label="Lihat detail Kedai Kopi Janari">Lihat Detail</a>
+<a href="https://wa.me/6281234567890?text=Halo%20Kedai%20Kopi%20Janari%2C%20saya%20ingin%20pesan" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Kedai Kopi Janari"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -398,7 +391,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <div class="umkm-card reveal">
 <div class="umkm-card-photo">
 <span class="badge-tag badge-amber">Populer • Kuliner</span>
-<img src="assets/img/background-hero.webp" alt="Seblak Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/background-hero.webp" alt="Seblak Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 </div>
 <div class="umkm-card-body">
 <span class="umkm-category">Makanan Pedas</span>
@@ -409,8 +402,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 10.00 – 21.00 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/seblak-bu-ratna.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6281298765432?text=Halo%20Bu%20Ratna%2C%20saya%20pesan%20seblak" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/seblak-bu-ratna.html" class="btn-detail" aria-label="Lihat detail Seblak Pedas Bu Ratna">Lihat Detail</a>
+<a href="https://wa.me/6281298765432?text=Halo%20Bu%20Ratna%2C%20saya%20pesan%20seblak" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Seblak Pedas Bu Ratna"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -419,7 +412,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <div class="umkm-card reveal">
 <div class="umkm-card-photo">
 <span class="badge-tag badge-emerald">Jasa • Express</span>
-<img src="assets/img/background-hero.webp" alt="Laundry Kilat" onerror="this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80'">
+<img src="assets/img/background-hero.webp" alt="Laundry Kilat" onerror="this.src='https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=600&q=80'" loading="lazy" decoding="async">
 </div>
 <div class="umkm-card-body">
 <span class="umkm-category">Jasa Cuci &amp; Setrika</span>
@@ -430,8 +423,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 07.00 – 20.00 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/laundry-kilat.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6285712345678?text=Halo%20Laundry%20Kilat%2C%20bisa%20ambil%20cucian" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/laundry-kilat.html" class="btn-detail" aria-label="Lihat detail Laundry Kilat Bersih">Lihat Detail</a>
+<a href="https://wa.me/6285712345678?text=Halo%20Laundry%20Kilat%2C%20bisa%20ambil%20cucian" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Laundry Kilat Bersih"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -451,8 +444,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 09.00 – 17.00 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/mekar-batik.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6281234567890?text=Halo%20Batik%20Mekar%20Jaya%2C%20saya%20ingin%20tanya%20koleksi" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/mekar-batik.html" class="btn-detail" aria-label="Lihat detail Batik Tulis Mekar Jaya">Lihat Detail</a>
+<a href="https://wa.me/6281234567890?text=Halo%20Batik%20Mekar%20Jaya%2C%20saya%20ingin%20tanya%20koleksi" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Batik Tulis Mekar Jaya"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -472,8 +465,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 09.00 – 21.00 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/sambal-nusantara.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Sambal%20Nusantara%2C%20saya%20ingin%20pesan" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/sambal-nusantara.html" class="btn-detail" aria-label="Lihat detail Dapur Sambal Nusantara">Lihat Detail</a>
+<a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Sambal%20Nusantara%2C%20saya%20ingin%20pesan" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Dapur Sambal Nusantara"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -493,8 +486,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <li><i class="bi bi-clock text-warning"></i> 06.30 – 21.30 WIB</li>
 </ul>
 <div class="umkm-card-footer">
-<a href="Direktori/toko-berkah.html" class="btn-detail">Lihat Detail</a>
-<a href="https://wa.me/6281234567890?text=Halo%20Toko%20Berkah%2C%20ada%20stok%20sembako" target="_blank" rel="noopener" class="btn-wa-card"><i class="bi bi-whatsapp"></i></a>
+<a href="Direktori/toko-berkah.html" class="btn-detail" aria-label="Lihat detail Toko Kelontong Berkah">Lihat Detail</a>
+<a href="https://wa.me/6281234567890?text=Halo%20Toko%20Berkah%2C%20ada%20stok%20sembako" target="_blank" rel="noopener" class="btn-wa-card" aria-label="Chat WhatsApp Toko Kelontong Berkah"><i class="bi bi-whatsapp"></i></a>
 </div>
 </div>
 </div>
@@ -536,7 +529,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 <div class="testimoni-track" id="testiTrack">
 <div class="testimoni-card">
 <div class="testi-avatar-wrap">
-<img src="assets/img/logo.webp" alt="Foto Pak Joko" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'">
+<img src="assets/img/logo.webp" alt="Foto Pak Joko" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'" loading="lazy" decoding="async">
 </div>
 <p class="testi-text">"Sejak warung kopi saya terdaftar di Media UMKM, tetangga komplek sebelah jadi tahu dan langganan pesan kopi lewat WhatsApp. Sangat membantu tanpa dipotong biaya komisi!"</p>
 <h3 class="testi-name">Pak Joko</h3>
@@ -545,7 +538,7 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 
 <div class="testimoni-card">
 <div class="testi-avatar-wrap">
-<img src="assets/img/logo.webp" alt="Foto Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'">
+<img src="assets/img/logo.webp" alt="Foto Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'" loading="lazy" decoding="async">
 </div>
 <p class="testi-text">"Sangat praktis! Pembeli tinggal klik tombol WhatsApp langsung terhubung ke nomor HP saya. Daftar harga dan lokasi warung seblak saya tampil rapi."</p>
 <h3 class="testi-name">Bu Ratna</h3>
@@ -554,8 +547,8 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 </div>
 
 <div class="testi-dots" id="testiDots">
-<button type="button" class="testi-dot active" data-index="0"></button>
-<button type="button" class="testi-dot" data-index="1"></button>
+<button type="button" class="testi-dot active" data-index="0" aria-label="Testimoni 1"></button>
+<button type="button" class="testi-dot" data-index="1" aria-label="Testimoni 2"></button>
 </div>
 </div>
 </section>
@@ -749,12 +742,12 @@ Semua jenis usaha warga lokal: warung makan, toko sembako, penjahit, laundry, be
 <div class="wa-floating-widget" id="waFloatingWidget">
 <div class="wa-popup-card" id="waPopupCard">
 <div class="wa-popup-header">
-<img src="assets/img/favicon.png" alt="Admin" width="28" height="28" class="rounded-circle">
+<img src="assets/img/favicon-64.webp" alt="Admin" width="28" height="28" class="rounded-circle" loading="lazy" decoding="async">
 <div>
 <div class="fw-bold fs-6">Admin Media UMKM</div>
 <div class="small opacity-75">Online • Siap Membantu</div>
 </div>
-<button class="btn-close btn-close-white ms-auto" id="waPopupClose"></button>
+<button class="btn-close btn-close-white ms-auto" id="waPopupClose" aria-label="Tutup"></button>
 </div>
 <div class="wa-popup-body">
 <div class="wa-chat-bubble">
@@ -783,7 +776,7 @@ Semua jenis usaha warga lokal: warung makan, toko sembako, penjahit, laundry, be
 </button>
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 <!-- Custom JS -->
 <script src="assets/js/main.js" defer></script>
 </body>

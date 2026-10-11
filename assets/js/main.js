@@ -4,7 +4,7 @@
  * Floating WA Widget, Scroll Progress Ring & Reveal Animations
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initAll() {
   initNavbarState();
   initScrollReveal();
   initScrollToTop();
@@ -14,7 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initNetworkModalSearch();
   initDirektoriFilter();
   initDirektoriSearch();
-});
+}
+if (document.readyState === 'complete') initAll();
+else document.addEventListener('DOMContentLoaded', initAll);
+
+/* Helper: jalankan fungsi hanya saat elemen terlihat di layar (hemat CPU untuk slider otomatis) */
+function whenVisible(el, onChange) {
+  if (!el || !('IntersectionObserver' in window)) { onChange(true); return; }
+  new IntersectionObserver((entries) => onChange(entries[entries.length - 1].isIntersecting), { threshold: 0 }).observe(el);
+}
 
 /* =====================================================
    1. Navbar Active Link & Sticky Shadow
@@ -31,13 +39,14 @@ function initNavbarState() {
     }
   });
 
+  let scrolled = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
+    const now = window.scrollY > 30;
+    if (now !== scrolled) {
+      scrolled = now;
+      navbar?.classList.toggle('scrolled', now);
     }
-  });
+  }, { passive: true });
 }
 
 /* =====================================================
@@ -61,14 +70,8 @@ function initScrollReveal() {
     });
   }, { rootMargin: '100px 0px 50px 0px', threshold: 0.01 });
 
-  reveals.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < (window.innerHeight || document.documentElement.clientHeight) + 150) {
-      el.classList.add('active');
-    } else {
-      observer.observe(el);
-    }
-  });
+  // IntersectionObserver langsung melaporkan elemen yang sudah terlihat, tanpa memaksa layout ulang
+  reveals.forEach(el => observer.observe(el));
 }
 
 /* =====================================================
@@ -77,26 +80,34 @@ function initScrollReveal() {
 function initScrollToTop() {
   const btn = document.getElementById('scrollToTop');
   const progressCircle = btn?.querySelector('.progress-ring-circle');
-  if (!btn || !progressCircle) return;
+  if (!btn || !progressCircle || btn._bound) return;
+  btn._bound = true;
 
   const circumference = 2 * Math.PI * 20; // 125.66
 
+  let docHeight = 1, ticking = false, isActive = false;
+  const measure = () => { docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight); };
+
   function updateProgress() {
+    ticking = false;
     const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = Math.min(1, Math.max(0, scrollTop / docHeight));
-    const dashoffset = circumference - (progress * circumference);
+    progressCircle.style.strokeDashoffset = circumference - (progress * circumference);
 
-    progressCircle.style.strokeDashoffset = dashoffset;
-
-    if (scrollTop > 250) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
+    const show = scrollTop > 250;
+    if (show !== isActive) {
+      isActive = show;
+      btn.classList.toggle('active', show);
     }
   }
 
-  window.addEventListener('scroll', updateProgress);
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  window.addEventListener('resize', () => { measure(); updateProgress(); }, { passive: true });
+  window.addEventListener('load', measure);
+  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
+  measure();
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -110,7 +121,8 @@ function initFloatingWA() {
   const popupCard = document.getElementById('waPopupCard');
   const closeBtn = document.getElementById('waPopupClose');
 
-  if (!floatingBtn || !popupCard) return;
+  if (!floatingBtn || !popupCard || floatingBtn._bound) return;
+  floatingBtn._bound = true;
 
   floatingBtn.addEventListener('click', () => {
     popupCard.classList.toggle('active');
@@ -165,7 +177,10 @@ function init3DFanGallery() {
     });
   });
 
+  let visible = true;
+  whenVisible(document.getElementById('galleryFan'), v => { visible = v; });
   setInterval(() => {
+    if (!visible || document.hidden) return;
     currentIndex = (currentIndex + 1) % cards.length;
     updateFanPosition();
   }, 4500);
@@ -205,7 +220,9 @@ function initTestimonialsSlider() {
     });
   });
 
-  setInterval(() => slideTo(index + 1), 6000);
+  let visible = true;
+  whenVisible(track, v => { visible = v; });
+  setInterval(() => { if (visible && !document.hidden) slideTo(index + 1); }, 6000);
 }
 
 /* =====================================================
