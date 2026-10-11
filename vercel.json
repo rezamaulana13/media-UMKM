@@ -1,4 +1,31 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/detail", "destination": "/direktori", "permanent": true },
+    { "source": "/detail.html", "destination": "/direktori", "permanent": true },
+    { "source": "/direktori/:slug", "destination": "/Direktori/:slug", "permanent": true },
+    { "source": "/jaya-roda", "destination": "/Direktori/jaya-roda", "permanent": true },
+    { "source": "/jaya-roda.html", "destination": "/Direktori/jaya-roda", "permanent": true },
+    { "source": "/kopi-janari", "destination": "/Direktori/kopi-janari", "permanent": true },
+    { "source": "/kopi-janari.html", "destination": "/Direktori/kopi-janari", "permanent": true },
+    { "source": "/laundry-kilat", "destination": "/Direktori/laundry-kilat", "permanent": true },
+    { "source": "/laundry-kilat.html", "destination": "/Direktori/laundry-kilat", "permanent": true },
+    { "source": "/mekar-batik", "destination": "/Direktori/mekar-batik", "permanent": true },
+    { "source": "/mekar-batik.html", "destination": "/Direktori/mekar-batik", "permanent": true },
+    { "source": "/rajut-neng-ayu", "destination": "/Direktori/rajut-neng-ayu", "permanent": true },
+    { "source": "/rajut-neng-ayu.html", "destination": "/Direktori/rajut-neng-ayu", "permanent": true },
+    { "source": "/salon-warga", "destination": "/Direktori/salon-warga", "permanent": true },
+    { "source": "/salon-warga.html", "destination": "/Direktori/salon-warga", "permanent": true },
+    { "source": "/sambal-nusantara", "destination": "/Direktori/sambal-nusantara", "permanent": true },
+    { "source": "/sambal-nusantara.html", "destination": "/Direktori/sambal-nusantara", "permanent": true },
+    { "source": "/seblak-bu-ratna", "destination": "/Direktori/seblak-bu-ratna", "permanent": true },
+    { "source": "/seblak-bu-ratna.html", "destination": "/Direktori/seblak-bu-ratna", "permanent": true },
+    { "source": "/service-elektronik", "destination": "/Direktori/service-elektronik", "permanent": true },
+    { "source": "/service-elektronik.html", "destination": "/Direktori/service-elektronik", "permanent": true },
+    { "source": "/toko-berkah", "destination": "/Direktori/toko-berkah", "permanent": true },
+    { "source": "/toko-berkah.html", "destination": "/Direktori/toko-berkah", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/fonts/(.*)",

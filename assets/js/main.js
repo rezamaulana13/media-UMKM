@@ -29,12 +29,15 @@ function whenVisible(el, onChange) {
    ===================================================== */
 function initNavbarState() {
   const navbar = document.getElementById('navbar');
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const rawPath = window.location.pathname.split('/').filter(Boolean).pop() || 'index';
+  const currentPath = rawPath.replace(/\.html$/, '') || 'index';
 
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href && href.includes(currentPath)) {
+    if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+    const linkPath = (href.split('?')[0].split('#')[0].split('/').filter(Boolean).pop() || 'index').replace(/\.html$/, '');
+    if (linkPath === currentPath) {
       link.classList.add('active');
     }
   });
