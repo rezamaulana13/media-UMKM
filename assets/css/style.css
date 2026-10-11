@@ -2723,6 +2723,7 @@ html {
   border-radius: 24px;
   padding: 2.5rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
 }
 
 .contact-form-panel .form-label {
@@ -2740,7 +2741,14 @@ html {
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 0.95rem;
+  max-width: 100%;
   transition: all 0.25s ease;
+}
+
+.contact-form-panel .form-select option {
+  background: #0B1320;
+  color: #FFFFFF;
+  padding: 0.5rem;
 }
 
 .contact-form-panel .form-control:focus,
@@ -2749,6 +2757,76 @@ html {
   border-color: #10b981;
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
   color: #FFFFFF;
+}
+
+/* Custom Select Dropdown UI (Anti-Overflow & Mobile Responsive) */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-wrapper select {
+  display: none !important;
+}
+
+.custom-select-trigger {
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+}
+
+.custom-select-trigger.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2) !important;
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  background: #0B1320;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.4rem;
+  margin: 0;
+  list-style: none;
+  z-index: 1050;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+  display: none;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.custom-select-menu.show {
+  display: block;
+  animation: selectFadeIn 0.15s ease-out;
+}
+
+@keyframes selectFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.custom-select-option {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.92rem;
+  color: #E2E8F0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: normal;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select-option:hover,
+.custom-select-option.selected {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10B981;
 }
 
 .contact-sidebar-card {

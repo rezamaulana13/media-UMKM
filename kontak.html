@@ -244,15 +244,34 @@
                     <div class="invalid-feedback text-danger small">Masukkan kota / domisili Anda.</div>
                   </div>
                   <div class="col-md-6">
-                    <label for="topikKeperluan" class="form-label">Topik Keperluan *</label>
-                    <select class="form-select" id="topikKeperluan" required>
-                      <option value="" selected disabled>Pilih topik keperluan...</option>
-                      <option value="Pertanyaan Umum">Pertanyaan Umum Seputar Media UMKM</option>
-                      <option value="Kerjasama Event & Komunitas">Kerjasama Event &amp; Kemitraan Komunitas</option>
-                      <option value="Saran & Masukan">Saran &amp; Masukan Platform</option>
-                      <option value="Pengaduan & Kendala">Pengaduan &amp; Laporan Kendala Layanan</option>
-                    </select>
-                    <div class="invalid-feedback text-danger small">Pilih salah satu topik keperluan.</div>
+                    <label for="topikTrigger" class="form-label">Topik Keperluan *</label>
+                    <div class="custom-select-wrapper" id="topikWrapper">
+                      <button type="button" class="form-select custom-select-trigger d-flex align-items-center justify-content-between text-start" id="topikTrigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="custom-select-text text-muted">Pilih topik keperluan...</span>
+                      </button>
+                      <select class="d-none" id="topikKeperluan" aria-hidden="true">
+                        <option value="" selected disabled>Pilih topik keperluan...</option>
+                        <option value="Pertanyaan Umum Seputar Media UMKM">Pertanyaan Umum</option>
+                        <option value="Kerjasama Event & Kemitraan Komunitas">Kerjasama &amp; Kemitraan</option>
+                        <option value="Saran & Masukan Platform">Saran &amp; Masukan</option>
+                        <option value="Pengaduan & Laporan Kendala Layanan">Pengaduan &amp; Kendala</option>
+                      </select>
+                      <ul class="custom-select-menu" id="topikMenu" role="listbox" aria-labelledby="topikTrigger">
+                        <li class="custom-select-option" role="option" data-value="Pertanyaan Umum Seputar Media UMKM">
+                          <i class="bi bi-question-circle me-2 text-success"></i> Pertanyaan Umum
+                        </li>
+                        <li class="custom-select-option" role="option" data-value="Kerjasama Event & Kemitraan Komunitas">
+                          <i class="bi bi-people me-2 text-info"></i> Kerjasama &amp; Kemitraan
+                        </li>
+                        <li class="custom-select-option" role="option" data-value="Saran & Masukan Platform">
+                          <i class="bi bi-chat-heart me-2 text-warning"></i> Saran &amp; Masukan
+                        </li>
+                        <li class="custom-select-option" role="option" data-value="Pengaduan & Laporan Kendala Layanan">
+                          <i class="bi bi-exclamation-triangle me-2 text-danger"></i> Pengaduan &amp; Kendala
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="invalid-feedback text-danger small" id="topikFeedback">Pilih salah satu topik keperluan.</div>
                   </div>
                 </div>
 
@@ -515,7 +534,7 @@
 
       <!-- Col 2: Tautan Cepat -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Tautan Cepat</h4>
+        <h3 class="footer-col-title">Tautan Cepat</h3>
         <div class="footer-title-bar"></div>
         <ul class="footer-list">
           <li><a href="/">Beranda</a></li>
@@ -530,7 +549,7 @@
 
       <!-- Col 3: Kategori Usaha -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Kategori Usaha</h4>
+        <h3 class="footer-col-title">Kategori Usaha</h3>
         <div class="footer-title-bar"></div>
         <ul class="footer-list">
           <li><a href="direktori.html?kat=kuliner">Kuliner &amp; Minuman</a></li>
@@ -544,7 +563,7 @@
 
       <!-- Col 4: Informasi & Bantuan -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Informasi &amp; Bantuan</h4>
+        <h3 class="footer-col-title">Informasi &amp; Bantuan</h3>
         <div class="footer-title-bar"></div>
         <ul class="footer-list">
           <li><a href="daftar.html">Panduan Pendaftaran</a></li>
@@ -559,7 +578,7 @@
 
       <!-- Col 5: Jam Operasional -->
       <div class="footer-col">
-        <h4 class="footer-col-title">Jam Operasional</h4>
+        <h3 class="footer-col-title">Jam Operasional</h3>
         <div class="footer-title-bar"></div>
         <div class="footer-schedule-item">
           <span class="sched-label">Layanan Pengelola</span>
@@ -709,9 +728,52 @@
       const alertSuccess = document.getElementById('alertSuccess');
       const ticketCodeEl = document.getElementById('ticketCode');
 
+      // Custom Select Logic
+      const topikWrapper = document.getElementById('topikWrapper');
+      const topikTrigger = document.getElementById('topikTrigger');
+      const topikMenu = document.getElementById('topikMenu');
+      const topikSelect = document.getElementById('topikKeperluan');
+      const topikOptions = topikMenu?.querySelectorAll('.custom-select-option') || [];
+      const topikText = topikTrigger?.querySelector('.custom-select-text');
+      const topikFeedback = document.getElementById('topikFeedback');
+
+      if (topikTrigger && topikMenu) {
+        topikTrigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isOpen = topikMenu.classList.toggle('show');
+          topikTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        topikOptions.forEach(opt => {
+          opt.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const val = opt.getAttribute('data-value');
+            topikSelect.value = val;
+            topikText.textContent = opt.textContent.trim();
+            topikText.classList.remove('text-muted');
+            topikText.classList.add('text-white');
+            topikTrigger.classList.remove('is-invalid');
+            if (topikFeedback) topikFeedback.style.display = 'none';
+
+            topikOptions.forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+
+            topikMenu.classList.remove('show');
+            topikTrigger.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!topikWrapper?.contains(e.target)) {
+            topikMenu.classList.remove('show');
+            topikTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
       function validateForm() {
         let isValid = true;
-        const requiredInputs = form.querySelectorAll('[required]');
+        const requiredInputs = form.querySelectorAll('input[required], textarea[required]');
         requiredInputs.forEach(input => {
           if (!input.value.trim()) {
             input.classList.add('is-invalid');
@@ -720,6 +782,17 @@
             input.classList.remove('is-invalid');
           }
         });
+
+        // Validasi topik select
+        if (!topikSelect?.value) {
+          topikTrigger?.classList.add('is-invalid');
+          if (topikFeedback) topikFeedback.style.display = 'block';
+          isValid = false;
+        } else {
+          topikTrigger?.classList.remove('is-invalid');
+          if (topikFeedback) topikFeedback.style.display = 'none';
+        }
+
         return isValid;
       }
 
@@ -760,6 +833,12 @@
 
         // Reset form
         form.reset();
+        if (topikText) {
+          topikText.textContent = 'Pilih topik keperluan...';
+          topikText.classList.add('text-muted');
+          topikText.classList.remove('text-white');
+        }
+        topikOptions.forEach(o => o.classList.remove('selected'));
       });
     });
   </script>

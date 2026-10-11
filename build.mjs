@@ -92,7 +92,10 @@ const bootstrapCss = purged[0].css;
 
 /* ---------- 4. Gabung + minify ---------- */
 const siteCss = read(path.join(ROOT, 'assets/css/style.css'));
-const bundle = [fontCss, bootstrapCss, iconCss, siteCss].join('\n');
+const bundle = [fontCss, bootstrapCss, iconCss, siteCss]
+  .join('\n')
+  .replace(/-webkit-appearance:\s*button/g, '-webkit-appearance:button;appearance:button')
+  .replace(/-webkit-appearance:\s*textfield/g, '-webkit-appearance:textfield;appearance:textfield');
 const { css: min } = csso.minify(bundle, { restructure: false }); // restructure:false = urutan aturan tidak diubah
 fs.writeFileSync(path.join(ROOT, 'assets/css/site.min.css'), min);
 

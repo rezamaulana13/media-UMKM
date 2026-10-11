@@ -8,13 +8,18 @@ function initAll() {
   initNavbarState();
   initScrollReveal();
   initScrollToTop();
-  initFloatingWA();
-  init3DFanGallery();
-  initTestimonialsSlider();
-  initNetworkModalSearch();
-  initDirektoriFilter();
-  initDirektoriSearch();
-  initBlogPagination();
+
+  // Komponen interaktif sekunder didefer ke frame idle agar tidak membebani pemuatan awal (First Input / TBT)
+  const defer = window.requestIdleCallback || ((cb) => setTimeout(cb, 10));
+  defer(() => {
+    initFloatingWA();
+    init3DFanGallery();
+    initTestimonialsSlider();
+    initNetworkModalSearch();
+    initDirektoriFilter();
+    initDirektoriSearch();
+    initBlogPagination();
+  });
 }
 if (document.readyState === 'complete') initAll();
 else document.addEventListener('DOMContentLoaded', initAll);
@@ -89,12 +94,14 @@ function initScrollToTop() {
 
   const circumference = 2 * Math.PI * 20; // 125.66
 
-  let docHeight = 1, ticking = false, isActive = false;
-  const measure = () => { docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight); };
+  let docHeight = 0, ticking = false, isActive = false;
 
   function updateProgress() {
     ticking = false;
     const scrollTop = window.scrollY;
+    if (!docHeight || docHeight <= 1) {
+      docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    }
     const progress = Math.min(1, Math.max(0, scrollTop / docHeight));
     progressCircle.style.strokeDashoffset = circumference - (progress * circumference);
 
@@ -108,10 +115,12 @@ function initScrollToTop() {
   window.addEventListener('scroll', () => {
     if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
   }, { passive: true });
-  window.addEventListener('resize', () => { measure(); updateProgress(); }, { passive: true });
-  window.addEventListener('load', measure);
-  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
-  measure();
+
+  window.addEventListener('resize', () => {
+    docHeight = 0;
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
