@@ -4,7 +4,7 @@
   "private": true,
   "description": "Website statis Media UMKM. Jalankan `npm run build` setiap kali mengubah style.css, data.js atau menambah halaman/ikon baru.",
   "scripts": {
-    "build": "echo 'Static build ready'",
+    "build": "node -e \"process.exit(0)\"",
     "build:assets": "node build.mjs"
   },
   "devDependencies": {
