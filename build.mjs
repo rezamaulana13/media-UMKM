@@ -14,13 +14,14 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { PurgeCSS } from 'purgecss';
 import * as csso from 'csso';
 import subsetFont from 'subset-font';
 
 const require = createRequire(import.meta.url);
-const ROOT = path.dirname(new URL(import.meta.url).pathname);
+const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const nm = (p) => path.join(ROOT, 'node_modules', p);
 const read = (p) => fs.readFileSync(p, 'utf8');
 const kb = (n) => (n / 1024).toFixed(1) + ' KiB';

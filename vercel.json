@@ -1,7 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "buildCommand": null,
   "redirects": [
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/detail", "destination": "/direktori", "permanent": true },
     { "source": "/detail.html", "destination": "/direktori", "permanent": true },
     { "source": "/direktori/:slug", "destination": "/Direktori/:slug", "permanent": true },

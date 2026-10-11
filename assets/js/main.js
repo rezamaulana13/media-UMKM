@@ -14,6 +14,7 @@ function initAll() {
   initNetworkModalSearch();
   initDirektoriFilter();
   initDirektoriSearch();
+  initBlogPagination();
 }
 if (document.readyState === 'complete') initAll();
 else document.addEventListener('DOMContentLoaded', initAll);
@@ -198,6 +199,8 @@ function initTestimonialsSlider() {
   const track = document.getElementById('testiTrack');
   const dots = document.querySelectorAll('.testi-dot');
   const cards = document.querySelectorAll('.testimoni-card');
+  const prevBtn = document.getElementById('testiPrev');
+  const nextBtn = document.getElementById('testiNext');
   if (!track || !cards.length) return;
 
   let index = 0;
@@ -223,6 +226,9 @@ function initTestimonialsSlider() {
     });
   });
 
+  if (prevBtn) prevBtn.addEventListener('click', () => slideTo(index - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => slideTo(index + 1));
+
   let visible = true;
   whenVisible(track, v => { visible = v; });
   setInterval(() => { if (visible && !document.hidden) slideTo(index + 1); }, 6000);
@@ -243,7 +249,7 @@ function initNetworkModalSearch() {
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       if (text.includes(q)) {
-        card.style.display = 'block';
+        card.style.display = '';
       } else {
         card.style.display = 'none';
       }
@@ -311,4 +317,133 @@ function initDirektoriSearch() {
       }
     });
   });
+}
+
+/* =====================================================
+   9. Blog & Artikel Pagination (3 Cards Per Halaman)
+   ===================================================== */
+function initBlogPagination() {
+  const grid = document.getElementById('articleGrid');
+  if (!grid) return;
+
+  const items = grid.querySelectorAll('.article-item');
+  if (!items.length) return;
+
+  const itemsPerPage = 3;
+  const totalItems = items.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  let currentPage = 1;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const pageParam = parseInt(urlParams.get('page'));
+  if (pageParam && pageParam >= 1 && pageParam <= totalPages) {
+    currentPage = pageParam;
+  }
+
+  function renderPage(page, shouldScroll = false) {
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    currentPage = page;
+
+    const startIdx = (currentPage - 1) * itemsPerPage;
+    const endIdx = Math.min(startIdx + itemsPerPage, totalItems);
+
+    items.forEach((item, index) => {
+      if (index >= startIdx && index < endIdx) {
+        item.style.display = '';
+        item.classList.add('visible');
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    renderControls();
+
+    const infoEl = document.getElementById('blogPaginationInfo');
+    if (infoEl) {
+      infoEl.textContent = `Menampilkan ${startIdx + 1} - ${endIdx} dari ${totalItems} artikel edukasi`;
+    }
+
+    if (shouldScroll) {
+      const topOffset = grid.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+  }
+
+  function renderControls() {
+    const navWrap = document.getElementById('blogPagination');
+    if (!navWrap) return;
+
+    navWrap.innerHTML = '';
+
+    // Tombol Prev
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'btn btn-pagination-nav';
+    prevBtn.innerHTML = '<i class="bi bi-chevron-left small"></i> Prev';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.setAttribute('aria-label', 'Halaman Sebelumnya');
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        renderPage(currentPage - 1, true);
+        updateUrl(currentPage);
+      }
+    });
+    navWrap.appendChild(prevBtn);
+
+    // Tombol Nomor Halaman
+    const numWrap = document.createElement('div');
+    numWrap.className = 'd-flex gap-2';
+    for (let i = 1; i <= totalPages; i++) {
+      const numBtn = document.createElement('button');
+      numBtn.type = 'button';
+      numBtn.className = `btn btn-pagination-number ${i === currentPage ? 'active' : ''}`;
+      numBtn.textContent = i;
+      numBtn.setAttribute('aria-label', `Halaman ${i}`);
+      const targetPage = i;
+      numBtn.addEventListener('click', () => {
+        if (currentPage !== targetPage) {
+          renderPage(targetPage, true);
+          updateUrl(targetPage);
+        }
+      });
+      numWrap.appendChild(numBtn);
+    }
+    navWrap.appendChild(numWrap);
+
+    // Tombol Next
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'btn btn-pagination-nav';
+    nextBtn.innerHTML = 'Next <i class="bi bi-chevron-right small"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.setAttribute('aria-label', 'Halaman Selanjutnya');
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        renderPage(currentPage + 1, true);
+        updateUrl(currentPage);
+      }
+    });
+    navWrap.appendChild(nextBtn);
+  }
+
+  function updateUrl(page) {
+    const url = new URL(window.location);
+    if (page === 1) {
+      url.searchParams.delete('page');
+    } else {
+      url.searchParams.set('page', page);
+    }
+    window.history.pushState({}, '', url);
+  }
+
+  window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const p = parseInt(params.get('page')) || 1;
+    renderPage(p, false);
+  });
+
+  renderPage(currentPage, false);
 }

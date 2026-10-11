@@ -126,7 +126,7 @@
 <!-- NAVBAR (Floating Dark Card Navbar) -->
 <nav class="navbar navbar-expand-lg navbar-site sticky-top" id="navbar" aria-label="Navigasi utama">
 <div class="container">
-<a class="navbar-brand" href="index.html">
+<a class="navbar-brand" href="/">
 <span class="brand-logo-mark" aria-hidden="true">
 <img src="assets/img/logo-120.webp" alt="Logo Media UMKM" width="40" height="40" decoding="async" onerror="this.src='assets/img/favicon.png'">
 </span>
@@ -146,7 +146,7 @@
 
 <div class="collapse navbar-collapse" id="menuUtama">
 <ul class="navbar-nav mx-auto align-items-lg-center">
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Beranda</a></li>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Beranda</a></li>
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="direktori.html" id="direktoriDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 Direktori UMKM
@@ -493,26 +493,73 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 </div>
 </div>
 
-<!-- INTERNAL LINKING RIBBON: Semua Toko Direktori UMKM -->
-<div class="p-4 rounded-4 mt-4 border border-secondary border-opacity-25 reveal" style="background: var(--panel);">
-<div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+<!-- 3 ARTIKEL & TIPS TERBAIK / TERBARU -->
+<div class="mt-5 pt-3">
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 reveal">
 <div>
-<h3 class="h6 font-bold text-white mb-1"><i class="bi bi-grid-fill text-success me-2"></i>Jelajahi Profil Lengkap 10 Mitra UMKM Indonesia</h3>
-<p class="small text-white-50 mb-0">Klik nama usaha untuk melihat profil katalog, daftar menu harga, lokasi, dan kontak WhatsApp langsung:</p>
+<h2 class="h3 font-bold text-white mb-1"><span class="highlight-mark">Artikel &amp; Edukasi Usaha Pilihan</span></h2>
+<p class="text-muted mb-0">Panduan praktis dan tips bisnis pilihan untuk mendongkrak penjualan warung &amp; usaha lokal.</p>
 </div>
-<a href="direktori.html" class="btn btn-sm btn-emerald">Buka Direktori Lengkap &rarr;</a>
+<a href="blog.html" class="btn btn-outline-light rounded-pill px-4">Lihat Semua Artikel &rarr;</a>
 </div>
-<div class="d-flex flex-wrap gap-2">
-<a href="Direktori/kopi-janari.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-cup-hot text-warning me-1"></i> Kedai Kopi Janari</a>
-<a href="Direktori/seblak-bu-ratna.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-fire text-danger me-1"></i> Kedai Seblak Bu Ratna</a>
-<a href="Direktori/mekar-batik.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-bag-heart text-info me-1"></i> Batik Tulis Mekar Jaya</a>
-<a href="Direktori/rajut-neng-ayu.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-palette text-cyan me-1"></i> Kerajinan Rajut Neng Ayu</a>
-<a href="Direktori/laundry-kilat.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-droplet-half text-primary me-1"></i> Laundry Express Kilat</a>
-<a href="Direktori/jaya-roda.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-bicycle text-success me-1"></i> Bengkel Sepeda Jaya Roda</a>
-<a href="Direktori/toko-berkah.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-basket text-success me-1"></i> Toko Kelontong Berkah</a>
-<a href="Direktori/salon-warga.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-scissors text-danger me-1"></i> Salon &amp; Barbershop Warga</a>
-<a href="Direktori/sambal-nusantara.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-egg-fried text-warning me-1"></i> Dapur Sambal Nusantara</a>
-<a href="Direktori/service-elektronik.html" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1"><i class="bi bi-tools text-info me-1"></i> Berkah Service Elektronik</a>
+
+<div class="row g-4">
+<!-- Artikel 1 -->
+<div class="col-lg-4 col-md-6 reveal">
+<div class="umkm-card h-100 d-flex flex-column">
+<div class="umkm-card-photo position-relative">
+<img src="https://images.unsplash.com/photo-1556742049-0a670c480778?auto=format&fit=crop&w=600&q=80" alt="Tips Promosi WA" onerror="this.src='assets/img/background-hero.webp'" loading="lazy" decoding="async">
+<span class="badge bg-success bg-opacity-75 position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill"><i class="bi bi-clock me-1"></i> 9 min</span>
+</div>
+<div class="umkm-card-body d-flex flex-column flex-grow-1">
+<span class="umkm-category text-success"><i class="bi bi-whatsapp me-1"></i> Pemasaran Digital</span>
+<h3 class="fs-5 mt-1 mb-2"><a href="blog/5-trik-jualan-laris-via-whatsapp.html" class="text-white text-decoration-none hover-emerald">5 Trik Jualan Laris via WhatsApp untuk Warung Rumahan</a></h3>
+<p class="text-secondary small mb-3 flex-grow-1">Cara menggunakan fitur katalog WhatsApp Business, pemanfaatan label, dan broadcast promo santun ke tetangga sekitar.</p>
+<div class="pt-3 mt-auto border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between">
+<span class="text-muted small"><i class="bi bi-calendar3 me-1"></i> 10 Okt 2026</span>
+<a href="blog/5-trik-jualan-laris-via-whatsapp.html" class="btn btn-sm btn-outline-success rounded-pill px-3 fw-semibold">Baca Artikel <i class="bi bi-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Artikel 2 -->
+<div class="col-lg-4 col-md-6 reveal">
+<div class="umkm-card h-100 d-flex flex-column">
+<div class="umkm-card-photo position-relative">
+<img src="https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=600&q=80" alt="Foto Produk Menarik" onerror="this.src='assets/img/background-hero.webp'" loading="lazy" decoding="async">
+<span class="badge bg-info bg-opacity-75 position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill"><i class="bi bi-clock me-1"></i> 10 min</span>
+</div>
+<div class="umkm-card-body d-flex flex-column flex-grow-1">
+<span class="umkm-category text-info"><i class="bi bi-camera me-1"></i> Fotografi Produk</span>
+<h3 class="fs-5 mt-1 mb-2"><a href="blog/cara-foto-makanan-produk-pakai-hp.html" class="text-white text-decoration-none hover-emerald">Cara Foto Makanan &amp; Produk Pakai HP Tanpa Alat Mahal</a></h3>
+<p class="text-secondary small mb-3 flex-grow-1">Pencahayaan alami jendela, sudut 45 derajat, dan trik reflektor sederhana yang bikin menu makanan jualanmu makin menggugah selera.</p>
+<div class="pt-3 mt-auto border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between">
+<span class="text-muted small"><i class="bi bi-calendar3 me-1"></i> 9 Okt 2026</span>
+<a href="blog/cara-foto-makanan-produk-pakai-hp.html" class="btn btn-sm btn-outline-info rounded-pill px-3 fw-semibold">Baca Artikel <i class="bi bi-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Artikel 3 -->
+<div class="col-lg-4 col-md-6 reveal">
+<div class="umkm-card h-100 d-flex flex-column">
+<div class="umkm-card-photo position-relative">
+<img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Manajemen Pembukuan" onerror="this.src='assets/img/pengelola.svg'" loading="lazy" decoding="async">
+<span class="badge bg-warning bg-opacity-75 text-dark position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill"><i class="bi bi-clock me-1"></i> 11 min</span>
+</div>
+<div class="umkm-card-body d-flex flex-column flex-grow-1">
+<span class="umkm-category text-warning"><i class="bi bi-wallet2 me-1"></i> Keuangan Usaha</span>
+<h3 class="fs-5 mt-1 mb-2"><a href="blog/panduan-pembukuan-sederhana-usaha-kecil.html" class="text-white text-decoration-none hover-emerald">Panduan Pembukuan Sederhana Usaha Kecil Rumahan</a></h3>
+<p class="text-secondary small mb-3 flex-grow-1">Pisahkan uang belanja pribadi dan modal usaha, format buku kas 4 kolom, serta aturan gaji sendiri agar arus kas warung tetap sehat.</p>
+<div class="pt-3 mt-auto border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between">
+<span class="text-muted small"><i class="bi bi-calendar3 me-1"></i> 8 Okt 2026</span>
+<a href="blog/panduan-pembukuan-sederhana-usaha-kecil.html" class="btn btn-sm btn-outline-warning rounded-pill px-3 fw-semibold">Baca Artikel <i class="bi bi-arrow-right ms-1"></i></a>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -527,28 +574,128 @@ Selengkapnya Tentang Kami <i class="bi bi-arrow-right ms-1"></i>
 
 <div class="testimoni-wrapper reveal">
 <div class="testimoni-track" id="testiTrack">
+<!-- Testimoni 1: Pak Joko -->
 <div class="testimoni-card">
 <div class="testi-avatar-wrap">
-<img src="assets/img/logo.webp" alt="Foto Pak Joko" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80'" loading="lazy" decoding="async">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Foto Pak Joko" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
 </div>
 <p class="testi-text">"Sejak warung kopi saya terdaftar di Media UMKM, tetangga komplek sebelah jadi tahu dan langganan pesan kopi lewat WhatsApp. Sangat membantu tanpa dipotong biaya komisi!"</p>
 <h3 class="testi-name">Pak Joko</h3>
 <p class="testi-role">Pemilik Kedai Kopi Janari</p>
 </div>
 
+<!-- Testimoni 2: Bu Ratna -->
 <div class="testimoni-card">
 <div class="testi-avatar-wrap">
-<img src="assets/img/logo.webp" alt="Foto Bu Ratna" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80'" loading="lazy" decoding="async">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Foto Bu Ratna" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
 </div>
 <p class="testi-text">"Sangat praktis! Pembeli tinggal klik tombol WhatsApp langsung terhubung ke nomor HP saya. Daftar harga dan lokasi warung seblak saya tampil rapi."</p>
 <h3 class="testi-name">Bu Ratna</h3>
 <p class="testi-role">Pemilik Seblak Pedas Bu Ratna</p>
 </div>
+
+<!-- Testimoni 3: Reza Maulana Nehru -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80" alt="Foto Reza Maulana Nehru" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Sangat bersyukur bengkel saya bisa terdaftar di direktori ini. Warga sekitar yang butuh servis motor mendadak atau ganti ban luar bisa langsung kontak WhatsApp tanpa bingung mencari nomor teknisi terdekat."</p>
+<h3 class="testi-name">Reza Maulana Nehru</h3>
+<p class="testi-role">Pemilik Bengkel Sepeda &amp; Motor Jaya Roda</p>
 </div>
 
-<div class="testi-dots" id="testiDots">
+<!-- Testimoni 4: Alya Nur Hidayat -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Foto Alya Nur Hidayat" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Katalog produk rajutan tangan saya sekarang bisa dipajang dengan rapi dan dilihat calon pembeli dari berbagai wilayah. Pesanan tas rajut dan souvenir pernikahan custom makin ramai masuk ke WhatsApp!"</p>
+<h3 class="testi-name">Alya Nur Hidayat</h3>
+<p class="testi-role">Pengrajin Kerajinan Rajut Neng Ayu</p>
+</div>
+
+<!-- Testimoni 5: Fara Dilla Ajeng Ayu Ning Tias -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Foto Fara Dilla Ajeng Ayu Ning Tias" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Pelanggan ibu-ibu dan remaja putri di lingkungan sekitar jadi lebih gampang lihat menu perawatan rambut, creambath, dan potong rambut. Tampilan websitenya sangat memanjakan mata dan mudah diakses!"</p>
+<h3 class="testi-name">Fara Dilla Ajeng Ayu Ning Tias</h3>
+<p class="testi-role">Pemilik Salon &amp; Barbershop Warga</p>
+</div>
+
+<!-- Testimoni 6: Iva Munawaroh -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80" alt="Foto Iva Munawaroh" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Warga komplek sekarang sering pesan galon air, beras, dan gas elpiji lewat chat langsung ke warung. Sangat terbantu karena tidak ada potongan komisi sepeser pun, jadi keuntungan usaha tetap utuh."</p>
+<h3 class="testi-name">Iva Munawaroh</h3>
+<p class="testi-role">Pengelola Toko Kelontong Berkah</p>
+</div>
+
+<!-- Testimoni 7: Muhamad Ali Mukarom -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Foto Muhamad Ali Mukarom" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Order servis kulkas, kipas angin, dan mesin cuci panggilan meningkat pesat sejak kontak usaha saya tampil di sini. Pembeli merasa lebih percaya karena profil usaha dan lokasi warga sangat jelas."</p>
+<h3 class="testi-name">Muhamad Ali Mukarom</h3>
+<p class="testi-role">Teknisi Berkah Service Elektronik</p>
+</div>
+
+<!-- Testimoni 8: Rizal Baihaqi -->
+<div class="testimoni-card">
+<div class="testi-avatar-wrap">
+<img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=200&q=80" alt="Foto Rizal Baihaqi" onerror="this.src='assets/img/logo.webp'" loading="lazy" decoding="async">
+</div>
+<div class="mb-2 text-warning small">
+<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+</div>
+<p class="testi-text">"Etalase aneka sambal botol dan lauk pedas siap santap kami makin dikenal luas oleh warga pencinta kuliner. Platform ini benar-benar wadah gotong royong digital yang nyata dampaknya bagi UMKM lokal!"</p>
+<h3 class="testi-name">Rizal Baihaqi</h3>
+<p class="testi-role">Pemilik Dapur Sambal Nusantara</p>
+</div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center gap-3 mt-4">
+<button type="button" class="btn btn-sm btn-outline-secondary rounded-circle" id="testiPrev" aria-label="Testimoni Sebelumnya" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+<i class="bi bi-chevron-left"></i>
+</button>
+<div class="testi-dots my-0" id="testiDots">
 <button type="button" class="testi-dot active" data-index="0" aria-label="Testimoni 1"></button>
 <button type="button" class="testi-dot" data-index="1" aria-label="Testimoni 2"></button>
+<button type="button" class="testi-dot" data-index="2" aria-label="Testimoni 3"></button>
+<button type="button" class="testi-dot" data-index="3" aria-label="Testimoni 4"></button>
+<button type="button" class="testi-dot" data-index="4" aria-label="Testimoni 5"></button>
+<button type="button" class="testi-dot" data-index="5" aria-label="Testimoni 6"></button>
+<button type="button" class="testi-dot" data-index="6" aria-label="Testimoni 7"></button>
+<button type="button" class="testi-dot" data-index="7" aria-label="Testimoni 8"></button>
+</div>
+<button type="button" class="btn btn-sm btn-outline-secondary rounded-circle" id="testiNext" aria-label="Testimoni Selanjutnya" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;">
+<i class="bi bi-chevron-right"></i>
+</button>
 </div>
 </div>
 </section>
@@ -616,7 +763,7 @@ Semua jenis usaha warga lokal: warung makan, toko sembako, penjahit, laundry, be
     <div class="footer-inner">
       <!-- Col 1: Brand & Kontak -->
       <div class="footer-brand-col">
-        <a class="footer-brand mb-3 d-inline-block" href="index.html">
+        <a class="footer-brand mb-3 d-inline-block" href="/">
           <span class="brand-logo-text"><span class="brand-name">Media <span class="brand-highlight">UMKM</span></span></span>
         </a>
         <div class="footer-address">
@@ -634,7 +781,7 @@ Semua jenis usaha warga lokal: warung makan, toko sembako, penjahit, laundry, be
         <h4 class="footer-col-title">Tautan Cepat</h4>
         <div class="footer-title-bar"></div>
         <ul class="footer-list">
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="/">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="direktori.html">Direktori UMKM</a></li>
           <li><a href="galeri.html">Galeri Etalase</a></li>
@@ -712,25 +859,103 @@ Semua jenis usaha warga lokal: warung makan, toko sembako, penjahit, laundry, be
 <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
 <div class="modal-content">
 <div class="modal-header">
-<h3 class="modal-title h5 font-bold" id="networkModalTitle"><i class="bi bi-globe text-success me-2"></i>Jaringan Etalase Warga</h3>
+<h3 class="modal-title h5 font-bold text-white" id="networkModalTitle"><i class="bi bi-globe-americas text-success me-2"></i>Jaringan Network Website Wilayah</h3>
 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
 </div>
 <div class="modal-body">
+<p class="small text-white-50 mb-3">Pilih portal resmi Media UMKM di kota / wilayah Anda untuk melihat etalase lokal setempat:</p>
 <div class="network-search-box mb-3">
 <input type="text" id="networkSearchInput" placeholder="Cari wilayah / direktori network warga..." aria-label="Cari network">
 </div>
 <div class="network-grid" id="networkGrid">
+<!-- Malang -->
 <div class="network-card" data-title="Media UMKM Malang" data-domain="malang.mediaumkm.web.id">
-<span class="network-card-title">Media UMKM Malang</span>
-<span class="network-card-domain">malang.mediaumkm.web.id</span>
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Malang</span>
+<span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
 </div>
+<span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>malang.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Direktori terpadu pelaku usaha mikro dan kuliner lokal Malang Raya.</p>
+</div>
+<a href="https://malang.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
+</div>
+
+<!-- Batu -->
 <div class="network-card" data-title="Media UMKM Batu" data-domain="batu.mediaumkm.web.id">
-<span class="network-card-title">Media UMKM Kota Batu</span>
-<span class="network-card-domain">batu.mediaumkm.web.id</span>
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Kota Batu</span>
+<span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
 </div>
+<span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>batu.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Sentra etalase wisata kuliner, oleh-oleh buah apel, dan villa lokal.</p>
+</div>
+<a href="https://batu.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
+</div>
+
+<!-- Surabaya -->
 <div class="network-card" data-title="Media UMKM Surabaya" data-domain="surabaya.mediaumkm.web.id">
-<span class="network-card-title">Media UMKM Surabaya</span>
-<span class="network-card-domain">surabaya.mediaumkm.web.id</span>
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Surabaya</span>
+<span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
+</div>
+<span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>surabaya.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Jaringan pedagang toko kelontong, kuliner pahlawan, dan aneka jasa.</p>
+</div>
+<a href="https://surabaya.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
+</div>
+
+<!-- Bandung -->
+<div class="network-card" data-title="Media UMKM Bandung" data-domain="bandung.mediaumkm.web.id">
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-info me-1"></i>Media UMKM Bandung</span>
+<span class="badge bg-info bg-opacity-25 text-info small">Jawa Barat</span>
+</div>
+<span class="network-card-domain text-info small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>bandung.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Pusat promosi fashion distro, kriya kreatif, dan jajanan kuliner Priangan.</p>
+</div>
+<a href="https://bandung.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
+</div>
+
+<!-- Yogyakarta -->
+<div class="network-card" data-title="Media UMKM Yogyakarta" data-domain="jogja.mediaumkm.web.id">
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-warning me-1"></i>Media UMKM Yogyakarta</span>
+<span class="badge bg-warning bg-opacity-25 text-warning small">D.I. Yogyakarta</span>
+</div>
+<span class="network-card-domain text-warning small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>jogja.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Katalog etalase kerajinan perak, batik khas, dan kuliner tradisional.</p>
+</div>
+<a href="https://jogja.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
+</div>
+
+<!-- Jabodetabek -->
+<div class="network-card" data-title="Media UMKM Jabodetabek" data-domain="jakarta.mediaumkm.web.id">
+<div>
+<div class="d-flex align-items-center justify-content-between mb-2">
+<span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Media UMKM Jabodetabek</span>
+<span class="badge bg-primary bg-opacity-25 text-primary small">DKI &amp; Sekitar</span>
+</div>
+<span class="network-card-domain text-primary small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>jakarta.mediaumkm.web.id</span>
+<p class="small text-white-50 mb-0">Hub direktori merchant usaha metropolitan dan jasa servis terpercaya.</p>
+</div>
+<a href="https://jakarta.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+<span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+</a>
 </div>
 </div>
 </div>

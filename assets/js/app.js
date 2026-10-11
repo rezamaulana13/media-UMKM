@@ -62,7 +62,7 @@ function pasangLayout() {
     <div class="footer-inner">
       <!-- Col 1: Brand & Kontak -->
       <div class="footer-brand-col">
-        <a class="footer-brand mb-3 d-inline-block" href="${rootPrefix}index.html">
+        <a class="footer-brand mb-3 d-inline-block" href="${rootPrefix || '/'}">
           <span class="brand-logo-text"><span class="brand-name">Media <span class="brand-highlight">UMKM</span></span></span>
         </a>
         <div class="footer-address">
@@ -80,7 +80,7 @@ function pasangLayout() {
         <h4 class="footer-col-title">Tautan Cepat</h4>
         <div class="footer-title-bar"></div>
         <ul class="footer-list">
-          <li><a href="${rootPrefix}index.html">Beranda</a></li>
+          <li><a href="${rootPrefix || '/'}">Beranda</a></li>
           <li><a href="${rootPrefix}tentang.html">Tentang Kami</a></li>
           <li><a href="${rootPrefix}direktori.html">Direktori UMKM</a></li>
           <li><a href="${rootPrefix}galeri.html">Galeri Etalase</a></li>
@@ -158,25 +158,92 @@ function pasangLayout() {
       <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title h5 font-bold" id="networkModalTitle"><i class="bi bi-globe text-success me-2"></i>Jaringan Etalase Warga</h3>
+            <h3 class="modal-title h5 font-bold text-white" id="networkModalTitle"><i class="bi bi-globe-americas text-success me-2"></i>Jaringan Network Website Wilayah</h3>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
           </div>
           <div class="modal-body">
+            <p class="small text-white-50 mb-3">Pilih portal resmi Media UMKM di kota / wilayah Anda untuk melihat etalase lokal setempat:</p>
             <div class="network-search-box mb-3">
               <input type="text" id="networkSearchInput" placeholder="Cari wilayah / direktori network warga..." aria-label="Cari network">
             </div>
             <div class="network-grid" id="networkGrid">
               <div class="network-card" data-title="Media UMKM Malang" data-domain="malang.mediaumkm.web.id">
-                <span class="network-card-title">Media UMKM Malang</span>
-                <span class="network-card-domain">malang.mediaumkm.web.id</span>
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Malang</span>
+                    <span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
+                  </div>
+                  <span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>malang.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Direktori terpadu pelaku usaha mikro dan kuliner lokal Malang Raya.</p>
+                </div>
+                <a href="https://malang.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
               </div>
               <div class="network-card" data-title="Media UMKM Batu" data-domain="batu.mediaumkm.web.id">
-                <span class="network-card-title">Media UMKM Kota Batu</span>
-                <span class="network-card-domain">batu.mediaumkm.web.id</span>
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Kota Batu</span>
+                    <span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
+                  </div>
+                  <span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>batu.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Sentra etalase wisata kuliner, oleh-oleh buah apel, dan villa lokal.</p>
+                </div>
+                <a href="https://batu.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
               </div>
               <div class="network-card" data-title="Media UMKM Surabaya" data-domain="surabaya.mediaumkm.web.id">
-                <span class="network-card-title">Media UMKM Surabaya</span>
-                <span class="network-card-domain">surabaya.mediaumkm.web.id</span>
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-success me-1"></i>Media UMKM Surabaya</span>
+                    <span class="badge bg-success bg-opacity-25 text-success small">Jawa Timur</span>
+                  </div>
+                  <span class="network-card-domain text-success small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>surabaya.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Jaringan pedagang toko kelontong, kuliner pahlawan, dan aneka jasa.</p>
+                </div>
+                <a href="https://surabaya.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
+              </div>
+              <div class="network-card" data-title="Media UMKM Bandung" data-domain="bandung.mediaumkm.web.id">
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-info me-1"></i>Media UMKM Bandung</span>
+                    <span class="badge bg-info bg-opacity-25 text-info small">Jawa Barat</span>
+                  </div>
+                  <span class="network-card-domain text-info small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>bandung.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Pusat promosi fashion distro, kriya kreatif, dan jajanan kuliner Priangan.</p>
+                </div>
+                <a href="https://bandung.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
+              </div>
+              <div class="network-card" data-title="Media UMKM Yogyakarta" data-domain="jogja.mediaumkm.web.id">
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-warning me-1"></i>Media UMKM Yogyakarta</span>
+                    <span class="badge bg-warning bg-opacity-25 text-warning small">D.I. Yogyakarta</span>
+                  </div>
+                  <span class="network-card-domain text-warning small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>jogja.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Katalog etalase kerajinan perak, batik khas, dan kuliner tradisional.</p>
+                </div>
+                <a href="https://jogja.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
+              </div>
+              <div class="network-card" data-title="Media UMKM Jabodetabek" data-domain="jakarta.mediaumkm.web.id">
+                <div>
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="network-card-title fw-bold text-white"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Media UMKM Jabodetabek</span>
+                    <span class="badge bg-primary bg-opacity-25 text-primary small">DKI &amp; Sekitar</span>
+                  </div>
+                  <span class="network-card-domain text-primary small d-block mb-2"><i class="bi bi-link-45deg me-1"></i>jakarta.mediaumkm.web.id</span>
+                  <p class="small text-white-50 mb-0">Hub direktori merchant usaha metropolitan dan jasa servis terpercaya.</p>
+                </div>
+                <a href="https://jakarta.mediaumkm.web.id" target="_blank" rel="noopener" class="btn btn-sm btn-emerald w-100 mt-3 d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Kunjungi Website</span> <i class="bi bi-box-arrow-up-right small"></i>
+                </a>
               </div>
             </div>
           </div>
