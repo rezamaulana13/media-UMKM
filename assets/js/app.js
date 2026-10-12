@@ -18,10 +18,11 @@ function placeholder(u, i = 0) {
     <text x='400' y='370' font-size='210' text-anchor='middle'>${u.emoji || '🏪'}</text></svg>`;
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
 }
-const fotoList = u => (u.foto && u.foto.length) ? u.foto : [placeholder(u, 0), placeholder(u, 1), placeholder(u, 2)];
 const inSubdir = window.location.pathname.toLowerCase().replace(/\\/g, '/').includes('/direktori/');
 const rootPrefix = inSubdir ? '../' : '';
 const dirPrefix = inSubdir ? '' : 'Direktori/';
+const resolveImg = p => (p && (p.startsWith('http') || p.startsWith('data:') || p.startsWith('/'))) ? p : (rootPrefix + p);
+const fotoList = u => (u.foto && u.foto.length) ? u.foto.map(resolveImg) : [placeholder(u, 0), placeholder(u, 1), placeholder(u, 2)];
 
 const umkmLink = u => `${dirPrefix}${encodeURIComponent(u.id)}.html`;
 

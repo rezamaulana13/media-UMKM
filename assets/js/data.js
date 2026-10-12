@@ -41,8 +41,7 @@ const UMKM = [
     deskripsi: "Berjualan sejak 2018. Kuah kencur dibuat segar setiap hari, level pedas bisa diatur dari 0 sampai 5. Cocok untuk makan sendiri, nongkrong, atau pesan untuk acara kecil.",
     emoji: "🍜", warna: "#B8392F",
     foto: [
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-seblak-bu-ratna.webp"
     ],
     area: "Antapani",
     alamat: "Jl. Purwakarta No. 12, Antapani, Bandung",
@@ -72,8 +71,7 @@ const UMKM = [
     deskripsi: "Kedai kopi kecil dengan biji pilihan dari petani Pangalengan dan Gunung Puntang. Tersedia seduh manual, kopi susu, dan biji kopi kiloan untuk dibawa pulang.",
     emoji: "☕", warna: "#6B4A2F",
     foto: [
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-kopi-janari.webp"
     ],
     area: "Dago",
     alamat: "Jl. Dago Asri No. 8, Coblong, Bandung",
@@ -102,8 +100,7 @@ const UMKM = [
     deskripsi: "Dikerjakan oleh pengrajin lokal dengan pewarna yang aman. Menerima pesanan seragam keluarga, kantor, dan sekolah dengan minimal 10 potong.",
     emoji: "👘", warna: "#2E4C8F",
     foto: [
-      "https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-mekar-batik.webp"
     ],
     area: "Cicendo",
     alamat: "Jl. Pasirkaliki No. 45, Cicendo, Bandung",
@@ -132,8 +129,7 @@ const UMKM = [
     deskripsi: "Cocok untuk hadiah ulang tahun, hampers, atau suvenir acara. Warna dan ukuran bisa dipesan khusus, pengerjaan 3–7 hari.",
     emoji: "🧶", warna: "#B03A6F",
     foto: [
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-rajut-neng-ayu.webp"
     ],
     area: "Buah Batu",
     alamat: "Jl. Kiaracondong No. 21, Buah Batu, Bandung",
@@ -162,8 +158,7 @@ const UMKM = [
     deskripsi: "Selesai 24 jam untuk layanan ekspres. Tersedia cuci kiloan, satuan, selimut, dan sepatu. Pakaian dipisah per pelanggan dan disetrika rapi.",
     emoji: "🧺", warna: "#1F7A8C",
     foto: [
-      "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-laundry-kilat.webp"
     ],
     area: "Cihampelas",
     alamat: "Jl. Cihampelas No. 150, Bandung",
@@ -192,8 +187,7 @@ const UMKM = [
     deskripsi: "Dikerjakan teknisi berpengalaman lebih dari 10 tahun. Tersedia suku cadang dasar, tambal ban, dan servis total dengan garansi 7 hari.",
     emoji: "🚲", warna: "#3F6B35",
     foto: [
-      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-jaya-roda.webp"
     ],
     area: "Lengkong",
     alamat: "Jl. Burangrang No. 33, Lengkong, Bandung",
@@ -222,7 +216,7 @@ const UMKM = [
     deskripsi: "Menyediakan sembako komplit untuk warga sekitar dengan harga bersaing. Siap antar gratis untuk pembelian minimal Rp50.000 dalam komplek.",
     emoji: "🛒", warna: "#10B981",
     foto: [
-      "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-toko-kelontong-berkah.webp"
     ],
     area: "Antapani",
     alamat: "Jl. Antapani No. 88, Bandung",
@@ -254,7 +248,7 @@ const UMKM = [
     deskripsi: "Tempat potong rambut nyaman dengan kapster profesional. Melayani potong rambut pria, pangkas anak, creambath, serta pewarnaan rambut.",
     emoji: "💈", warna: "#EF4444",
     foto: [
-      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-salon-warga.webp"
     ],
     area: "Coblong",
     alamat: "Jl. Dipatiukur No. 42, Bandung",
@@ -283,7 +277,7 @@ const UMKM = [
     deskripsi: "Ayam dan bebek goreng/bakar dengan 5 varian sambal ulek uleg segar. Dibuat tanpa bahan pengawet, cocok untuk pesanan nasi kotak acara.",
     emoji: "🍗", warna: "#F59E0B",
     foto: [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-sambal-nusantara.webp"
     ],
     area: "Sukajadi",
     alamat: "Jl. Sukajadi No. 102, Bandung",
@@ -313,7 +307,7 @@ const UMKM = [
     deskripsi: "Teknisi berpengalaman melayani perbaikan peralatan elektronik rumah tangga. Bisa dipanggil langsung ke rumah dengan garansi servis 1 bulan.",
     emoji: "🔌", warna: "#38BDF8",
     foto: [
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+      "assets/img/umkm/umkm-services-elektronik.webp"
     ],
     area: "Batununggal",
     alamat: "Jl. Soekarno Hatta No. 210, Bandung",

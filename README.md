@@ -3,7 +3,7 @@
 Website statis (HTML + Bootstrap 5 + JavaScript biasa). Tanpa database, tanpa server.
 
 ## Cara membuka
-Klik dua kali `index.html`. Bootstrap, ikon, dan font sudah ada di folder `assets/` (tidak lagi lewat CDN/Google Fonts), jadi cepat dan tetap tampil tanpa internet (kecuali foto dari Unsplash).
+Klik dua kali `index.html`. Bootstrap, ikon, font, dan seluruh foto UMKM/blog/testimoni sudah ada di folder `assets/` (dalam format WebP lokal), jadi cepat dan tampil penuh secara offline tanpa internet.
 
 ## Yang perlu kamu edit (hanya satu file)
 Buka `assets/js/data.js`:
